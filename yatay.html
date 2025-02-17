@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <title>Yatay Duvar Kağıtları | Enchanted Wallpapers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="resources/wallpapers">
+    <link rel="dns-prefetch" href="resources/wallpapers">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" as="style">
+    <link rel="icon" type="image/png" href="resources/wallpapers.png">
+    <link rel="shortcut icon" type="image/png" href="resources/wallpapers.png">
+    <meta name="description" content="Enchanted Wallpapers - Büyülü Duvar Kağıtları">
+    <meta name="theme-color" content="#1a1a1a">
+    <style>
+        .nav-link {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: #3498db !important;
+        }
+        @media (max-width: 992px) { /* Sadece mobil cihazlar için */
+  .custom-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Diğer elementlerin üzerine gelsin */
+    background-color: rgba(26, 26, 26, 0.95); /* Arka plan rengini ayarla */
+    backdrop-filter: blur(10px); /* Arka planı bulanıklaştır */
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-magic"></i>
+                Enchanted Wallpapers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <!-- Navbar içindeki animasyon toggle butonu -->
+<li class="nav-item">
+    <a href="#" class="nav-link animation-toggle" id="animationToggle" role="button">
+        <i class="fas fa-play-circle"></i>
+        <span>Animasyonları Kapat</span>
+    </a>
+</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="random"><i class="fas fa-random"></i> Rastgele</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link info-link" href="hakkimizda.html">
+                            <i class="fas fa-info-circle"></i> Hakkımda
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <button class="theme-toggle" title="Tema değiştir">
+                            <div class="icon-container">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <span>Tema Değiştir</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid mt-5">
+        <button class="category-toggle">
+            <span>Kategoriler</span>
+            <i style="margin-bottom:8px;" class="fas fa-chevron-left"></i>
+        </button>
+        <div class="sidebar">
+            <h3 style="color: white; font-weight: bold;" class="sidebar-title">
+                <i style="color: white;" class="fas fa-th me-2"></i>
+                Kategoriler
+            </h3>
+            <ul class="category-list">
+                <li><a href="#" class="category-item active"><i class="fas fa-border-all"></i> Tümü</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-city"></i> Şehir Manzaraları</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-ghost"></i> Anime</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-futbol"></i> Futbol</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-mountain"></i> Doğa</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-car"></i> Arabalar</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-paw"></i> Hayvanlar</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-gamepad"></i> Oyunlar</a></li>
+                <li><a href="#" class="category-item"><i class="fas fa-film"></i> Film & Dizi</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="adblock-warning">
+                <i class="fas fa-shield-alt"></i>
+                <p>Sitemizi desteklemek ve sorunlarla karşılaşmamak için reklam engelleyici kullanmamanızı öneririz. Teşekkür ederiz!</p>
+            </div>
+            <div class="welcome-message">
+                <h1 class="welcome-title">HD Duvar kağıdı mı istemiştin???</h1><br>
+                <div class="download-info">
+                    <i class="fas fa-mouse"></i>
+                    Büyülü Duvar Kağıtlarını indirmek için sağ tık yapın (Her 15 saniyede bir indirme yapabilirsiniz)
+                </div>
+            </div>
+            <div class="ratio-selector">
+                <div class="container">
+                    <a href="index.html" class="ratio-btn">
+                        <i class="fas fa-mobile-alt"></i>
+                        Dikey (9:16)
+                    </a>
+                    <a href="yatay.html" class="ratio-btn active">
+                        <i class="fas fa-panorama"></i>
+                        Yatay (16:9)
+                    </a>
+                    <a href="kare.html" class="ratio-btn">
+                        <i class="fas fa-square"></i>
+                        Kare (1:1)
+                    </a>
+                </div>
+            </div>
+            <section id="wallpapers" class="row justify-content-start">
+                <!-- Resimler JavaScript ile dinamik olarak eklenecek -->
+            </section>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">
+                            <i class="fas fa-chevron-left me-1"></i> Önceki
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            Sonraki <i class="fas fa-chevron-right ms-1"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer class="custom-footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-brand">
+                            <i class="fas fa-magic"></i>
+                            Enchanted Wallpapers
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        </div>
+                        <div class="copyright">
+                            <p style="color: white;">© 2025 Enchanted Wallpapers - Büyülü Duvar Kağıtları</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modalImage" src="" data-original-src="" alt="" draggable="false">
+                </div>
+                <div class="mobile-zoom-progress">
+                    <div class="zoom-control-wrapper">
+                        <i class="fas fa-search-minus zoom-icon"></i>
+                        <input type="range" min="0" max="70" value="0" id="zoomRange">
+                        <i class="fas fa-search-plus zoom-icon"></i>
+                    </div>
+                    <div class="zoom-percentage">%0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

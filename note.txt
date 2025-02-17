@@ -1,0 +1,72 @@
+node c:/Users/ramaz/Documents/codes2/wallpaper-app-3/scripts/generateImageJson.js
+bu json daki resimleri izlemeyi başlatır, otomatik günceller resimleri.
+-----------------------------------------------------------------------------
+npm install node-windows
+önce bunu terminale yazıyorsun, sonra
+node c:/Users/ramaz/Documents/codes2/wallpaper-app-3/scripts/daemon/wallpaper-service.js install
+diyip indiriyosun servisi başlat.
+------------------------
+Performans arttır.
+    ctrl + h
+    Ara: \n\s*\n+
+    Değiştir: \n
+--------------------------
+// Resim yükleme fonksiyonunu güncelle
+async function loadImage(imgElement, src, isHighQuality = false) {
+    if (!src) {
+        console.error('Kaynak URL eksik');
+        return Promise.reject(new Error('Kaynak URL eksik')); 
+    }
+    try {
+        // Önbellekte varsa kullan
+        if (IMAGE_CACHE.has(src)) {
+            imgElement.src = IMAGE_CACHE.get(src);
+            imgElement.classList.add('loaded');
+            if (isHighQuality) {
+                imgElement.classList.add('high-quality');
+                createResponsiveImage(imgElement, src);
+            }
+            return imgElement;
+        }
+        const image = new Image();
+        const loadPromise = new Promise((resolve, reject) => {
+            image.onload = () => resolve();
+            image.onerror = () => reject(new Error('Resim yüklenemedi'));
+        });
+        image.src = src;
+        await loadPromise;
+        IMAGE_CACHE.set(src, src);
+        imgElement.src = src;
+        imgElement.classList.add('loaded');
+        if (isHighQuality) {
+            imgElement.classList.add('high-quality');
+            createResponsiveImage(imgElement, src);
+        }
+        return imgElement;
+    } catch (error) {
+        console.error('Resim yükleme hatası:', error);
+        throw error;
+    }
+}
+---------------------------------
+function initRatioSelector() {
+    document.querySelectorAll('.ratio-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('href');
+            if (!targetPage) return;
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            if (targetPage === currentPage) return;
+            // Bekleyen işlemler varsa uyar
+            if (isPageLoadCooldownActive || Date.now() - lastDownloadTime < DOWNLOAD_COOLDOWN) {
+                if (confirm('Devam eden işlemler var. Sayfadan ayrılmak istediğinize emin misiniz?')) {
+                    window.removeEventListener('beforeunload', beforeUnloadHandler);
+                    window.location.href = targetPage;
+                }
+                return;
+            }
+            window.removeEventListener('beforeunload', beforeUnloadHandler);
+            window.location.href = targetPage;
+        });
+    });
+}

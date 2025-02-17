@@ -1,0 +1,12 @@
+{
+  "name": "wallpaper-app",
+  "version": "1.0.0",
+  "scripts": {
+    "service:install": "node scripts/wallpaper-service.js install",
+    "service:uninstall": "node scripts/wallpaper-service.js uninstall",
+    "watch": "node scripts/generateImageJson.js"
+  },
+  "dependencies": {
+    "node-windows": "^1.0.0-beta.8"
+  }
+}
